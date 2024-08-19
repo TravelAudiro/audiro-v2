@@ -13,6 +13,12 @@ public class CourseController {
 
 	@GetMapping("/details")
 	public void details() {
-		
+
 	}
+
+	@GetMapping("/create")
+	public void create() {
+
+	}
+
 }
