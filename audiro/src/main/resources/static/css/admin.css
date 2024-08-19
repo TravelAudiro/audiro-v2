@@ -1,0 +1,169 @@
+@charset "UTF-8";
+
+.header-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	padding: 0 15px;
+}
+
+.header-container h1 {
+	top: 100px;
+	margin: 0;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.header-container .btn {
+	top: 100px;
+	position: absolute;
+	left: 15px;
+}
+
+body {
+	margin: 0;
+	overflow-x: hidden; /* 사이드바가 화면 밖으로 나가도 스크롤바가 생기지 않도록 함 */
+}
+
+
+h1 {
+	font-size: 36px;
+	margin-top: 100px;
+}
+
+.container {
+	margin-top: 200px;
+	max-width: 1500px;
+	font-size: 16px;
+}
+
+.sidebar {
+	width: 350px;
+	background-color: #343a40;
+	padding: 20px;
+	height: 100vh;
+	color: white;
+	position: fixed;
+	top: 0;
+	left: -350px; /* 초기에는 숨김 상태 */
+	transition: left 0.3s ease; /* 애니메이션 효과 */
+	z-index: 1000; /* 콘텐츠 위에 위치 */
+	padding-top: 60px; /* 사이드바 상단 여백 */
+}
+
+.sidebar ::before {
+	font-family: 'Material Icons';
+	font-size: 1.5em;
+	float: left;
+	margin-right: 10px;
+}
+
+.sidebar li:nth-child(1) a::before {
+	content: '\e8b2';
+}
+
+.sidebar li:nth-child(2) a::before {
+	content: '\f02e';
+}
+
+.sidebar li:nth-child(3) a::before {
+	content: '\e869';
+}
+
+.sidebar.open {
+	left: 0; /* 열렸을 때 */
+}
+
+.sidebar .toggle-btn {
+	position: absolute;
+	right: -70px; /* 사이드바의 오른쪽 밖에 위치 */
+	top: 0px; /* 상단 여백 */
+	background-color: #343a40;
+	color: white;
+	border: none;
+	outline: none;
+	padding: 10px 20px;
+	cursor: pointer;
+	z-index: 1001; /* 사이드바 위에 보이도록 */
+	transition: background-color 0.3s ease;
+}
+
+.sidebar.open .toggle-btn {
+	right: 5px; /* 사이드바 내부 오른쪽으로 이동 */
+}
+
+.sidebar .toggle-btn:hover {
+	background-color: #495057;
+}
+
+.sidebar ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.sidebar ul li {
+	margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+	color: white;
+	text-decoration: none;
+	display: block;
+	padding: 10px;
+	background-color: #343a40;
+	border-radius: 5px;
+	transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+	background-color: #495057;
+}
+
+.content {
+	margin-left: 0; /* 사이드바가 열려도 콘텐츠는 움직이지 않음 */
+	padding: 20px;
+	transition: margin-left 0.3s ease; /* 사이드바 열림/닫힘에 따른 여백 조정 */
+	flex-grow: 1; /* 콘텐츠 영역이 사이드바 옆에 자동으로 위치하도록 설정 */
+}
+
+.content table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.content table, .content th, .content td {
+	border: 1px solid #ddd;
+}
+
+.content th, .content td {
+	padding: 8px;
+	text-align: left;
+}
+
+/* 반응형 디자인 설정 */
+@media ( max-width : 768px) {
+	.sidebar {
+		width: 200px;
+	}
+	.sidebar.open {
+		left: 0;
+	}
+	.sidebar .toggle-btn {
+		right: -50px; /* 사이드바의 오른쪽 밖에 위치 조정 */
+	}
+	.content {
+		margin-left: 0;
+	}
+}
+
+@media ( max-width : 576px) {
+	.sidebar {
+		width: 150px;
+	}
+	.sidebar .toggle-btn {
+		right: -40px; /* 사이드바의 오른쪽 밖에 위치 조정 */
+	}
+}
