@@ -1,5 +1,25 @@
 @charset "UTF-8";
 
-type{
-	background:url("");
+
+body, html {
+	align-items: center;
+	justify-content: center;
+}
+/* body, html {
+	height: 100%;
+	margin: 0;
+} */
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#contents {
+	width: 60%; 원하는 너비로 설정
+	max-width: 800px;
+} 
+
+type {
+	background: url("");
 }

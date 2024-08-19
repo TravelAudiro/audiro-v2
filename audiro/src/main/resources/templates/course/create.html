@@ -8,16 +8,17 @@
 	rel="stylesheet"
 	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
 	crossorigin="anonymous">
+	
+	<link rel="stylesheet" href="/css/course-create.css">
 </head>
 <body>
-	<div id="contents" class="card mt-2">
-		<div class="card-body">
+	<div id="contents" class="mt-2 mx-10">
 			<div class="row">
 				<div class="title col-12 col-sm-4">
 					<input type="text" name="title" />
 				</div>
 			</div>
-			<div class="schedule">
+			<div class="schedule mt-2">
 				<div class="type">
 					<span> <label for="category"></label> <select id="category"
 						title="코스 일정 선택">
@@ -29,18 +30,19 @@
 					</span>
 				</div>
 			</div>
-			<div class="cos">
+			<div class="cos mt-2">
 				<div class="total_check">
 					<strong>총<span>0</span>건
 					</strong>
 				</div>
 				<ul></ul>
+		
 				<div class="row">
 					<div class="col-12">
 						<div id="map" style="width: 500px; height: 300px;"></div>
 					</div>
 				</div>
-				<div class="openCheck">
+				<div class="openCheck mt-2">
 					<em>노출 여부</em>
 					<button type="type" class="view">레이어팝업 열림</button>
 					<div class="row">
@@ -68,7 +70,6 @@
 				</div>
 			</div>
 
-		</div>
 	</div>
 
 	<script
@@ -86,5 +87,6 @@
 
 		var map = new kakao.maps.Map(container, options);
 	</script>
-</body>
+	
+	<script src="/css/course-create"></script></body>
 </html>

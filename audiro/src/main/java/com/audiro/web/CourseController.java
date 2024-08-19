@@ -6,15 +6,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 @Controller
+@Slf4j
 @RequestMapping("course")
 public class CourseController {
-    
-    @GetMapping("/create")
-    public String home() {
-        
-        return "/course/create";
-    }
+
+	@GetMapping("/details")
+	public void details() {
+
+	}
+	
+	  @GetMapping("/create")
+	    public void create() {
+	 
+	    }
 
 }
