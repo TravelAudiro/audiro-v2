@@ -3,8 +3,84 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-</head>
-<body>
+<link rel="stylesheet" href="/css/course-details.css">
 
-</body>
-</html>
+</head>
+
+<body>
+	<main class="container mt-2">
+		<div class="content-area">
+			<div class="title">
+				<h2>차이나타운 동화마을 연경</h2>
+			</div>
+			<div class="tag">
+				<h3>#힐링 #친구</h3>
+			</div>
+			<div class="btn-img">
+			<button class="btn-left">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+					fill="currentColor" class="bi bi-suit-heart-fill" viewBox="0 0 16 16">
+  					<path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1" />
+				</svg>
+			</button>
+			<div class="btn-right-container">
+				<button class="btn-right">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+						fill="currentColor" class="bi bi-share-fill" viewBox="0 0 16 16">
+	  					<path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.5 2.5 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5" />
+					</svg>
+				</button>
+				<button class="btn-right">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+						fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+	  					<path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+					</svg>
+				</button>
+			</div>	
+			</div>
+			<div class="destination">
+				<div>
+					<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=1c77bee8-b4cc-4a89-b18e-d8efe0dd9106"/>
+				</div>			
+				<div class="description">						
+					<p>‘차이나타운 동화마을 연경’ 은 차이나타운과 동화마을이 만나는 곳에 위치하였다.
+						◎ 한류의 매력을 만나는 여행 정보 - 드라마 ‘차이나타운 동화마을 연경’ 은 드라마 시즌 2에서 니나를 찾아 헤매던 준호와 호열이 잠시 식사하던 곳으로 중국 음식과 관광 쇼핑 등이 발달한 인천의 차이나타운 내에 
+						위치한 중식당이다. 샤오룽바오부터 짜장면, 탕수육 등 다양한 중식과 이국적인 풍경을 즐길 수 있는 곳이다.</p>
+				</div>
+				<div class="map-container ">
+					<div id="map"></div>
+				</div>
+			</div>
+			</div>
+			<div class="comment-area">
+				<div>
+					<textarea id="textarea"></textarea>
+					<button>댓글등록</button>
+				</div>
+				<div class="comment">
+					<div class="profile">
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoE_8rTWHnRPEZYgsmH-8r-I5aTjlPXotO6Q&s" />
+					</div>
+					<div class="content-area">
+						<div class="content">댓글내용</div>
+						<div class="nickname">닉네임</div>
+						<div class="date">등록 날짜</div>
+					</div>
+					<div class="menu">
+						<button class="menu-btn">⋮</button>
+						<div class="menu-items">
+							<button>수정</button>
+							<button>삭제</button>
+						</div>
+					</div>
+					<button>신고</button>
+				</div>
+			</div>
+	
+		</main>
+	
+		<script type="text/javascript"
+			src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4a100046aeeb3a25f545a7ba94f0e6c8"></script>
+	
+	</body>
+	</html>
