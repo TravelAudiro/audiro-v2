@@ -15,10 +15,10 @@ public class CourseController {
 	public void details() {
 
 	}
-	
-	  @GetMapping("/create")
-	    public void create() {
-	 
-	    }
+
+	@GetMapping("/create")
+	public void create() {
+
+	}
 
 }
