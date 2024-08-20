@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<th:block th:replace="~{/layout/fragments :: documentHeader}"></th:block>
+		<link href="/css/member.css" rel="stylesheet">
+	</head>
+	<body>
+	
+		<div>
+			<th:block th:replace="~{/layout/fragments :: memberHeader}"></th:block>
+			
+			<main>
+				<div class="card card-body mx-auto">
+					<form>
+						<input type="text" class="form-control" id="username" name="username" placeholder="아이디" required autofocus />
+						<input type="password" class="form-control" id="password" name="password" placeholder="비밀번호" required />
+						<button class="form-control btn" id="btnSignIn">로그인</button>
+						<div class="checkbox-container">
+							<div class="checkbox-item">
+								<input type="checkbox" id="rememberUsername">
+								<label for="rememberUsername">아이디 저장</label>
+							</div>
+							<div class="checkbox-item">
+								<input type="checkbox" id="autoLogin">
+								<label for="autoLogin">자동 로그인</label>
+							</div>
+						</div>
+					</form>
+					
+					<div class="account-links-container">
+						<a href="/member/find-username">아이디 찾기</a>
+						<a href="/member/find-password">비밀번호 찾기</a>
+						<a href="/member/signup">회원가입</a>
+					</div>
+				
+					<div class="social-login-container">
+						<a>
+							<img src="/images/naver-btn.png" alt="naver"/>
+						</a>
+						<a>
+							<img src="" alt="kakao"/>
+						</a>
+						<a>
+							<img src="" alt="google"/>
+						</a>
+					</div>
+				</div>
+			</main>
+			
+			<footer></footer>
+		</div>
+	
+		<th:block th:replace="~{/layout/fragments :: bootstrapJS}"></th:block>
+	</body>
+</html>
