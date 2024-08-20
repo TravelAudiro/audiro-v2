@@ -13,17 +13,17 @@ public class AdminController {
 		
 	}
 	
-	@GetMapping("/admin/report_management")
+	@GetMapping("/admin/reports_management")
 	public void adminReport() {
 		
 	}
 	
-	@GetMapping("/admin/member_management")
+	@GetMapping("/admin/members_management")
 	public void adminMember() {
 		
 	}
 	
-	@GetMapping("/admin/resource_management")
+	@GetMapping("/admin/resources_management")
 	public void adminResource() {
 		
 	}

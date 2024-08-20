@@ -5,25 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>관리자페이지</title>
 
-<link
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-	rel="stylesheet">
-<!-- <link th:href="@{/css/member_management.css}" rel="stylesheet" /> -->
-<link th:href="@{/css/admin.css}" rel="stylesheet" />
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-	rel="stylesheet">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link th:href="@{/css/admin.css}" rel="stylesheet" /> 
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 </head>
 <body>
 	
-	<div class="header-container ml-3">
-        <!-- <a href="/admin/admin_control" class="btn btn-light">
+	<div class="header-btn ml-3">
+        <a href="/admin/admin_control" class="btn btn-light">
             <i class="material-icons" style="font-size: 30px;">settings</i>
-        </a> -->
-        <h1 class="text-center">회원관리</h1>
-    </div>
-	
+        </a> 
+    </div>    
+    
+    <h1 class="title">회원관리</h1>
+  
+	<!--  
 	<div class="sidebar">
 		<button class="toggle-btn">
 			<i class="material-icons">arrow_forward</i>
@@ -34,14 +32,14 @@
 			<li><a href="/admin/resource_management" class="item"><div>리소스관리</div></a></li>
 		</ul>
 	</div>
+	-->
 
-	<!-- Content -->
 	<main class="content d-flex justify-content-center">
 		<div class="container">
 			<div class="search-form">
 				<form>
 					<div class="mt-3 form-row">
-						<div class="form-group col-md-2">
+						<div class="form-group col-5 col-md-2">
 							<select class="form-control" id="search-category">
 								<option value="" disabled selected>회원검색</option>
 								<option value="전체">전체</option>
@@ -49,7 +47,7 @@
 								<option value="아이디">아이디</option>
 							</select>
 						</div>
-						<div class="form-group col-md-2">
+						<div class="form-group col-5 col-md-2">
 							<select class="form-control" id="search-category">
 								<option value="" disabled selected>경고/정지</option>
 								<option value="선택안함">선택안함</option>
@@ -59,10 +57,12 @@
 								<option value="정지">정지</option>
 							</select>
 						</div>
-						<div class="form-group col-md-3">
+					</div>
+					<div class="form-row">
+						<div class="form-group col-7 col-md-3">
 							<input type="text" class="form-control" id="search-keyword" />
 						</div>
-						<div class="form-group col-md-1 d-flex align-items-end">
+						<div class="form-group col-3 col-md-1 d-flex align-items-end">
 							<button type="submit" class="btn btn-primary w-100">검색</button>
 						</div>
 					</div>
@@ -71,51 +71,50 @@
 			<table class="table mt-4">
 				<thead>
 					<tr>
-						<th>번호</th>
-						<th>닉네임</th>
-						<th>아이디</th>
-						<th>가입날짜</th>
-						<th>수정날짜</th>
-						<th>경고/정지</th>
-						<th>권한</th>
+						<th class="col-number">번호</th>
+						<th class="col-nickname">닉네임</th>
+						<th class="col-username">아이디</th>
+						<th class="col-createdDate">가입날짜</th>
+						<th class="col-modifiedDate">수정날짜</th>
+						<th class="col-penalty">경고/정지</th>
+						<th class="col-role">권한</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td>1</td>
-						<td>audiro</td>
-						<td>audiro</td>
-						<td>2024-08-01</td>
-						<td>2024-08-01</td>
-						<td style="text-align: left; display: flex; align-items: center;">
+						<td class="col-number">1</td>
+						<td class="col-nickname">audiro</td>
+						<td class="col-username">audiro</td>
+						<td class="col-createdDate">2024-08-01</td>
+						<td class="col-modifiedDate">2024-08-01</td>
+						<td class="col-penalty" style="text-align: left; display: flex; align-items: center;">
 							없음
 							<button type="button" class="btn btn-default btn-sm d-flex justify-content-end" style="margin-left: auto;">
 								<span class="glyphicon glyphicon-bullhorn"></span>
 							</button>
 						</td>
-						<td>관리자</td>
+						<td class="col-role">관리자</td>
 					</tr>
 					<tr>
-						<td>2</td>
-						<td>트립닷컴</td>
-						<td>comeon</td>
-						<td>2024-08-01</td>
-						<td>2024-08-03</td>
-						<td style="text-align: left; display: flex; align-items: center;">
+						<td class="col-number">2</td>
+						<td class="col-nickname">트립닷컴</td>
+						<td class="col-username">comeon</td>
+						<td class="col-createdDate">2024-08-01</td>
+						<td class="col-modifiedDate">2024-08-03</td>
+						<td class="col-penalty" style="text-align: left; display: flex; align-items: center;">
 							경고 1회
 							<button type="button" class="btn btn-default btn-sm d-flex justify-content-end" style="margin-left: auto;">
 								<span class="glyphicon glyphicon-bullhorn"></span>
 							</button>
 						</td>
-						<td>일반</td>
+						<td class="col-role">일반</td>
 					</tr>
 				</tbody>
 			</table>
-		
 		</div>
 	</main>
 
-	<script th:src="@{/js/admin.js}"></script>
+	<!-- <script th:src="@{/js/admin.js}"></script> -->
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

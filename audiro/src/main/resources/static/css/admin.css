@@ -1,130 +1,91 @@
 @charset "UTF-8";
 
-.header-container {
+/* admin_control */
+.icon-button {
+	width: 300px;
+	height: 300px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	position: relative;
-	padding: 0 15px;
+	text-align: center;
+	margin: 10px;
+	background-color: #f8f9fa;
+	border: 1px solid #dee2e6;
+	border-radius: 8px;
+	font-size: 24px;
+	color: #495057;
+	text-decoration: none;
+	transition: background-color 0.3s, color 0.3s;
+	box-sizing: border-box;
 }
 
-.header-container h1 {
-	top: 100px;
-	margin: 0;
+.icon-button i {
+	font-size: 48px;
+	margin-bottom: 5px;
+	margin-right: 20px;
+}
+
+.icon-button:hover {
+	background-color: #e2e6ea;
+	color: #212529;
+}
+
+.button-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center; /* 가로축 가운데 정렬 */
+	align-items: center; /* 세로축 가운데 정렬 */
+	height: 100vh; /* 컨테이너를 전체 화면 높이로 설정 */
+}
+
+@media (max-width: 768px) {
+	.icon-button {
+		width: 100px;
+		height: 100px;
+		font-size: 15px;
+		flex-direction: column;
+	}
+	
+	.icon-button i {
+		font-size: 20px;
+		margin-bottom: 5px;
+		margin-right: 0px;
+	}
+	
+    .button-container {
+    		display: flex;
+        flex-direction: column; /* 세로 정렬로 변경 */
+        justify-content: center;
+        align-items: center; /* 가운데 정렬 유지 */
+        height: 100vh;
+        padding: 20px; /* 모바일 화면에서의 여백 추가 */
+    }
+}
+
+/*  */
+.header-btn {
+	top: 50px;
+	position: absolute;
+	left: 15px;
+}
+
+.title {
+	font-size: 30px;
+	top: 20px;
+	margin-top: 100px;
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
 }
 
-.header-container .btn {
-	top: 100px;
-	position: absolute;
-	left: 15px;
-}
-
-body {
-	margin: 0;
-	overflow-x: hidden; /* 사이드바가 화면 밖으로 나가도 스크롤바가 생기지 않도록 함 */
-}
-
-h1 {
-	font-size: 36px;
-	margin-top: 100px;
-}
-
 .container {
 	margin-top: 200px;
-	max-width: 1500px;
+	max-width: 1000px;
 	font-size: 16px;
 }
 
-.sidebar {
-	width: 350px;
-	background-color: #343a40;
-	padding: 20px;
-	height: 100vh;
-	color: white;
-	position: fixed;
-	top: 0;
-	left: -350px; /* 초기에는 숨김 상태 */
-	transition: left 0.3s ease; /* 애니메이션 효과 */
-	z-index: 1000; /* 콘텐츠 위에 위치 */
-	padding-top: 60px; /* 사이드바 상단 여백 */
-}
-
-.sidebar ::before {
-	font-family: 'Material Icons';
-	font-size: 1.5em;
-	float: left;
-	margin-right: 10px;
-}
-
-.sidebar li:nth-child(1) a::before {
-	content: '\e8b2';
-}
-
-.sidebar li:nth-child(2) a::before {
-	content: '\f02e';
-}
-
-.sidebar li:nth-child(3) a::before {
-	content: '\e869';
-}
-
-.sidebar.open {
-	left: 0; /* 열렸을 때 */
-}
-
-.sidebar .toggle-btn {
-	position: absolute;
-	right: -70px; /* 사이드바의 오른쪽 밖에 위치 */
-	top: 0px; /* 상단 여백 */
-	background-color: #343a40;
-	color: white;
-	border: none;
-	outline: none;
-	padding: 10px 20px;
-	cursor: pointer;
-	z-index: 1001; /* 사이드바 위에 보이도록 */
-	transition: background-color 0.3s ease;
-}
-
-.sidebar.open .toggle-btn {
-	right: 5px; /* 사이드바 내부 오른쪽으로 이동 */
-}
-
-.sidebar .toggle-btn:hover {
-	background-color: #495057;
-}
-
-.sidebar ul {
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
-}
-
-.sidebar ul li {
-	margin-bottom: 10px;
-}
-
-.sidebar ul li a {
-	color: white;
-	text-decoration: none;
-	display: block;
-	padding: 10px;
-	background-color: #343a40;
-	border-radius: 5px;
-	transition: background-color 0.3s ease;
-}
-
-.sidebar ul li a:hover {
-	background-color: #495057;
-}
-
 .content {
-	margin-left: 0; /* 사이드바가 열려도 콘텐츠는 움직이지 않음 */
 	padding: 20px;
-	flex-grow: 1; /* 콘텐츠 영역이 사이드바 옆에 자동으로 위치하도록 설정 */
 	font-size: 14px;
 }
 
@@ -144,8 +105,12 @@ h1 {
 	font-size: 14px;
 }
 
-.content .row, .content .btn {
+.content .row {
 	font-size: 14px;
+}
+
+.content .btn {
+	font-size: 13px;
 }
 
 .search-form {
@@ -165,11 +130,15 @@ h1 {
 }
 
 .form-row {
+	display: flex;
 	justify-content: center;
 }
 
 .form-group {
+	display: flex;
+	justify-content: center;
 	margin-bottom: 10px;
+	
 }
 
 .form-control {
@@ -189,7 +158,7 @@ button {
 }
 
 button:focus {
-	outline: none; /* 포커스 상태에서 아웃라인 제거 */
+	outline: none;
 }
 
 button:active {
@@ -197,41 +166,38 @@ button:active {
 	outline: none;
 }
 
+
+
 /* 반응형 디자인 설정 */
 @media ( max-width : 768px) {
-	.sidebar { width: 200px; }
-	.sidebar.open { left: 0; }
-	.sidebar .toggle-btn { right: -50px; /* 사이드바의 오른쪽 밖에 위치 조정 */ }
 	
 	.content {
-        /* Center align the content area */
         display: flex;
         justify-content: center;
-        padding: 0 10px; /* Optional: Add padding if needed */
+        padding: 0 10px; 
     }
 	
 	.content table {
-        width: 100%; /* Make the table take full width of its container */
-        max-width: 350px; /* Set a max-width for smaller screens */
-        font-size: 12px;
-        margin: 0 auto; /* Center the table horizontally */
+        width: 100%; 
+        max-width: 350px; 
+        font-size: 13px;
+        margin: 0 auto;
     }
 	
 	.content table td,
     .content table th {
-        /* Optional: Adjust padding and alignment if needed */
         padding: 8px;
-        text-align: center; /* Center align text inside table cells */
-        font-size: 12px;
+        text-align: center;
+        font-size: 13px;
     }
+ 
 }
 
+
 @media only screen and (max-width: 768px) {
-    .col-number,
-    .col-type,
-    .col-resolution-date,
-    .col-management {
-        display: none; /* Hide these columns */
+    .col-number, .col-type, .col-reporter, .col-resolution-date,
+    .col-username, .col-createdDate, .col-modifiedDate {
+        display: none !important;
     }
 }
 
