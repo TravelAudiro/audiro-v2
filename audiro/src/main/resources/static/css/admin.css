@@ -27,7 +27,6 @@ body {
 	overflow-x: hidden; /* 사이드바가 화면 밖으로 나가도 스크롤바가 생기지 않도록 함 */
 }
 
-
 h1 {
 	font-size: 36px;
 	margin-top: 100px;
@@ -125,13 +124,14 @@ h1 {
 .content {
 	margin-left: 0; /* 사이드바가 열려도 콘텐츠는 움직이지 않음 */
 	padding: 20px;
-	transition: margin-left 0.3s ease; /* 사이드바 열림/닫힘에 따른 여백 조정 */
 	flex-grow: 1; /* 콘텐츠 영역이 사이드바 옆에 자동으로 위치하도록 설정 */
+	font-size: 14px;
 }
 
 .content table {
-	width: 100%;
+	width: 1000px;
 	border-collapse: collapse;
+	margin: 0 auto;
 }
 
 .content table, .content th, .content td {
@@ -140,30 +140,98 @@ h1 {
 
 .content th, .content td {
 	padding: 8px;
-	text-align: left;
+	text-align: center;
+	font-size: 14px;
+}
+
+.content .row, .content .btn {
+	font-size: 14px;
+}
+
+.search-form {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.period-btn-group {
+	display: flex;
+	justify-content: center;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.period-btn-group .btn {
+	margin: 0 5px;
+}
+
+.form-row {
+	justify-content: center;
+}
+
+.form-group {
+	margin-bottom: 10px;
+}
+
+.form-control {
+	font-size: 14px;
+}
+
+td {
+	font-size: 14px;
+}
+
+button {
+	font-size: 14px;
+	border: none;
+	background: none;
+	cursor: pointer;
+	outline: none;
+}
+
+button:focus {
+	outline: none; /* 포커스 상태에서 아웃라인 제거 */
+}
+
+button:active {
+	border: none;
+	outline: none;
 }
 
 /* 반응형 디자인 설정 */
 @media ( max-width : 768px) {
-	.sidebar {
-		width: 200px;
-	}
-	.sidebar.open {
-		left: 0;
-	}
-	.sidebar .toggle-btn {
-		right: -50px; /* 사이드바의 오른쪽 밖에 위치 조정 */
-	}
+	.sidebar { width: 200px; }
+	.sidebar.open { left: 0; }
+	.sidebar .toggle-btn { right: -50px; /* 사이드바의 오른쪽 밖에 위치 조정 */ }
+	
 	.content {
-		margin-left: 0;
-	}
+        /* Center align the content area */
+        display: flex;
+        justify-content: center;
+        padding: 0 10px; /* Optional: Add padding if needed */
+    }
+	
+	.content table {
+        width: 100%; /* Make the table take full width of its container */
+        max-width: 350px; /* Set a max-width for smaller screens */
+        font-size: 12px;
+        margin: 0 auto; /* Center the table horizontally */
+    }
+	
+	.content table td,
+    .content table th {
+        /* Optional: Adjust padding and alignment if needed */
+        padding: 8px;
+        text-align: center; /* Center align text inside table cells */
+        font-size: 12px;
+    }
 }
 
-@media ( max-width : 576px) {
-	.sidebar {
-		width: 150px;
-	}
-	.sidebar .toggle-btn {
-		right: -40px; /* 사이드바의 오른쪽 밖에 위치 조정 */
-	}
+@media only screen and (max-width: 768px) {
+    .col-number,
+    .col-type,
+    .col-resolution-date,
+    .col-management {
+        display: none; /* Hide these columns */
+    }
 }
+
