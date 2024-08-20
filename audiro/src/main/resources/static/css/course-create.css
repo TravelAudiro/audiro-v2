@@ -1,25 +1,147 @@
 @charset "UTF-8";
 
+@import
+	url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css')
+	;
 
 body, html {
-	align-items: center;
-	justify-content: center;
+	justify-content: center; /* 수평 가운데 정렬 */
+	align-items: flex-start; /* 수직 정렬을 최상단으로 설정 */
+	height: 100%; /* 전체 페이지 높이 설정 */
 }
-/* body, html {
-	height: 100%;
+
+main {
+	max-width: 950px;
+	margin: 0 auto;
+	padding: 20px;
+	font-family: 'nanumsquare', sans-serif;
+	font-size: 20px;
+}
+
+.total_check {
+	padding: 15px 0;
+	border-top: 1px solid;
+	margin-top: 15px;
+}
+
+.des_list {
+	margin-top: 15px;
+	list-style-type: none;
+	padding: 0;
 	margin: 0;
-} */
-body {
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 
-#contents {
-	width: 60%; 원하는 너비로 설정
-	max-width: 800px;
-} 
+.des_list li {
+	display: flex;
+	align-items: center; /* 수직 정렬을 가운데로 설정 */
+	justify-content: space-between; /* 요소들 사이의 공간을 고르게 분배 */
+	border-top: 1px solid #e6e6e6;
+	border-bottom: 1px solid #e6e6e6;
+	padding: 10px 0;
+	position: relative; /* .modal 위치 설정을 위한 상대 위치 지정 */
+	flex-wrap: wrap;
+}
 
-type {
-	background: url("");
+.photo {
+	width: 150px; /* 원하는 너비 */
+	height: 150px; /* 원하는 높이 */
+	overflow: hidden; /* 이미지가 div를 넘칠 때 숨김 처리 */
+	margin-right: 10px;
+}
+
+.photo img {
+	width: 100%; /* div의 너비에 맞춰 이미지 크기 조정 */
+	height: 100%; /* div의 높이에 맞춰 이미지 크기 조정 */
+	object-fit: cover; /* 이미지가 div를 덮도록 조정, 비율 유지 */
+}
+
+.des_text {
+	flex-grow: 1; /* 남은 공간을 차지 */
+	margin-right: 10px;
+}
+
+.des_btn {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: auto; /* .des_btn을 오른쪽으로 정렬 */
+}
+
+.modal.subMenu {
+	position: absolute;
+	top: 100%;
+	right: 0;
+	z-index: 1;
+	display: none; /* 기본적으로 숨김 */
+}
+
+.des_btn:hover+.modal.subMenu {
+	display: block; /* 버튼에 마우스를 올리면 모달이 나타남 */
+}
+
+.photo, .des_text {
+	margin-right: 10px; /* div 요소들 사이의 간격을 설정 */
+}
+/* 옵션: 마지막 요소의 margin을 제거하려면 */
+.des_list li>div:last-child {
+	margin-right: 0;
+}
+/* 미디어 쿼리를 사용하여 반응형 디자인 구현 */
+@media ( max-width : 768px) {
+	.photo {
+		width: 100%; /* 작은 화면에서 사진의 크기 증가 */
+		height: auto;
+		max-width: 400px; /* 최대 너비 설정 */
+	}
+	.des_list li {
+		flex-direction: column; /* 작은 화면에서 세로로 쌓이도록 변경 */
+		align-items: flex-start; /* 왼쪽 정렬 */
+	}
+	.des_text {
+		flex-grow: 1; /* 남은 공간을 차지하여 너비 확장 */
+		margin-right: 0;
+		margin-top: 10px;
+	}
+	.des_btn {
+		align-self: flex-end; /* 버튼을 오른쪽 아래로 정렬 */
+		margin-top: 10px;
+	}
+}
+
+a {
+	color: inherit; /* 부모 요소의 글자 색을 상속받도록 설정 */
+	text-decoration: none; /* 밑줄 제거 */
+	font-size: 14px; /* 원하는 폰트 크기로 설정 (예: 14px) */
+}
+
+p {
+	font-size: 14px; /* 원하는 폰트 크기로 설정 (예: 14px) */
+}
+
+#map {
+	margin-top: 15px;
+	width: 100%;
+	height: 300px;
+}
+
+.open_check {
+	display: flex; /* 플렉스 컨테이너로 설정하여 자식 div를 수평으로 배치 */
+	justify-content: space-between; /* 자식 요소들이 양 끝에 위치하도록 설정 */
+	align-items: center; /* 수직 가운데 정렬 */
+	margin-top: 15px;
+}
+
+.review_text {
+	margin-top: 15px;
+}
+
+#btn {
+	display: flex; /* 플렉스 박스 모델 사용 */
+	justify-content: center; /* 수평 가운데 정렬 */
+	margin-top: 20px; /* 버튼과 위 요소 사이의 여백 조정 */
+}
+
+#btn input {
+	margin: 0 20px; /* 좌우 간격을 20px로 설정 */
 }
