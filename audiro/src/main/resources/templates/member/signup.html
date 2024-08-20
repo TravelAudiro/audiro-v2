@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<th:block th:replace="~{/layout/fragments :: documentHeader}"></th:block>
+		<link href="/css/member.css" rel="stylesheet">
+	</head>
+	<body>
+	
+		<div>
+			<th:block th:replace="~{/layout/fragments :: memberHeader}"></th:block>
+			
+			<main>
+				<div class="card card-body mx-auto">
+					<form>
+						<div class="input-container">
+							<input type="text" class="form-control" id="username" name="username" placeholder="아이디" required autofocus />
+							<i class="fa-solid fa-check" style="color: #4caf50;"></i>
+							<div id="usernameMsg" class="text-danger">메세지 입력</div>
+						</div>
+						<div class="input-container">
+							<input type="password" class="form-control" id="password" name="password" placeholder="비밀번호" required />
+							<i class="fa-solid fa-check" style="color: #4caf50;"></i>
+							<input type="password" class="form-control" id="confirmPassword" placeholder="비밀번호 확인" required />
+							<div id="passwordMsg" class="text-danger">메세지 입력</div>
+						</div>
+						<div class="input-container">
+							<input type="text" class="form-control" id="name" name="name" placeholder="이름" required />
+							<i class="fa-solid fa-check" style="color: #4caf50;"></i>
+							<div id="nameMsg" class="text-danger">메세지 입력</div>
+						</div>
+						<div class="input-container">
+							<input type="text" class="form-control" id="nickname" name="nickname" placeholder="닉네임" required />
+							<i class="fa-solid fa-check" style="color: #4caf50;"></i>
+							<div id="nicknameMsg" class="text-danger">메세지 입력</div>
+						</div>
+						<div class="input-btn-container">
+							<input type="tel" id="phone" name="phone" placeholder="전화번호" required />
+							<button class="btn">인증 요청</button>
+							<i class="fa-solid fa-check" style="color: #4caf50;"></i>
+						</div>
+						<div class="input-btn-container">
+							<input type="text" id="verificationCodePhone" placeholder="인증번호" required />
+							<button class="btn">확인</button>
+						</div>
+						<div id="phoneMsg" class="text-danger">메세지 입력</div>
+						<div class="input-btn-container">
+							<input type="email" id="email" name="email" placeholder="이메일" required />
+							<button class="btn">인증 요청</button>
+							<i class="fa-solid fa-check" style="color: #4caf50;"></i>
+						</div>
+						<div class="input-btn-container">
+							<input type="text" id="verificationCodeEmail" placeholder="인증번호" required />
+							<button class="btn">확인</button>
+						</div>
+						<div id="emailMsg" class="text-danger">메세지 입력</div>
+						<button class="form-control btn" id="btnSignUp">작성 완료</button>
+					</form>
+				</div>
+			</main>
+			
+			<footer></footer>
+		</div>
+	
+		<th:block th:replace="~{/layout/fragments :: bootstrapJS}"></th:block>
+	</body>
+</html>
